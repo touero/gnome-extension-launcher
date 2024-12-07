@@ -5,7 +5,7 @@
 > [!TIP]
 > Currently it can run on Gnome version 42, 43, 44.
 > 
-> You should fix the `shell-version` in [metadata.json](https://github.com/touero/gnome-extension-launcher/blob/master/metadata.json) if you want to try a lower version.
+> You should fix the [shell-version](https://github.com/touero/gnome-extension-launcher/blob/master/metadata.json#L5) in [metadata.json](https://github.com/touero/gnome-extension-launcher/blob/master/metadata.json) if you want to try a lower version.
 
 
 ## Usage
