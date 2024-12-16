@@ -11,6 +11,7 @@ const Me = ExtensionUtils.getCurrentExtension();
 
 
 const ICON = 'utilities-terminal-symbolic';
+const ICONMINE = 'preferences-desktop-remote-desktop-symbolic'
 const BULLET = 'pan-end-symbolic';
 
 
@@ -96,8 +97,12 @@ class Extension {
     }
 
 
-    _launchScript(script) {
-        this._indicator.menu.toggle();
+    _launchScript(script, switchMenu = true) {
+        if (switchMenu) {
+            this._indicator.menu.toggle();
+        } else {
+          this._fillMenu()
+        }
         let command = [`${this._path}/${script}`];
 
         try {
@@ -148,6 +153,17 @@ class Extension {
                 this._fillMenu();
             }
         });
+
+        let newButton = new PanelMenu.Button(0.0, 'New Button', false);
+        let newIcon = new St.Icon({
+            gicon: new Gio.ThemedIcon({name: ICONMINE}),
+            style_class: 'popup-menu-icon',
+        });
+        newButton.add_child(newIcon);
+        newButton.connect('button-press-event', () => {
+            this._launchScript('git_pull_all_docker.sh', false);
+        });
+        Main.panel.addToStatusArea('new-button', newButton);
     }
 
 

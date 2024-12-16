@@ -3,6 +3,8 @@
 ## Run a script from a Panel Indicator in Gnome version < 45
 
 > [!TIP]
+> I modified this branch by myself and added a button to directly execute a certain script. If you don’t know, don’t use it.
+>
 > Currently it can run on Gnome version 42, 43, 44.
 > 
 > You should fix the [shell-version](https://github.com/touero/gnome-extension-launcher/blob/master/metadata.json#L5) in [metadata.json](https://github.com/touero/gnome-extension-launcher/blob/master/metadata.json) if you want to try a lower version.
@@ -29,5 +31,6 @@ gnome-extensions enable launcher@hedgie.tech
 
 
 # Original Correlation
-https://github.com/hedgieinsocks/gnome-extension-launcher
+https://github.com/hedgieinsocks/gnome-extension-launcher  
+
 https://extensions.gnome.org/extension/5874/launcher/
